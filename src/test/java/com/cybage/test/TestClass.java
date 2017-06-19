@@ -7,13 +7,14 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
+import com.test.main.Drivers;
+
 public class TestClass {
 	WebDriver driver;
 
 	@BeforeTest
 	public void setUp() {
-		System.setProperty("webdriver.firefox.marionette", "src/test/resources/geckodriver.exe");
-		driver = new FirefoxDriver();
+		driver = Drivers.chooseDriver();
 	}
 
 	@Test
