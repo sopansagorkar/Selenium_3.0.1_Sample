@@ -29,7 +29,7 @@ public class Drivers {
 		} else if ("Linux".equalsIgnoreCase(os) && "amd64".equalsIgnoreCase(osarch)) {
 			if (getDriver.equalsIgnoreCase("firefox")) {
 				DesiredCapabilities capabilities = new DesiredCapabilities();
-				capabilities.setCapability("webdriver.firefox.marionette", "src/test/resources/geckodriver");
+				capabilities.setCapability("webdriver.gecko.driver", "src/test/resources/geckodriver");
 				driver = new FirefoxDriver(capabilities);
 			}
 			if (getDriver.equalsIgnoreCase("phantomjs")) {
