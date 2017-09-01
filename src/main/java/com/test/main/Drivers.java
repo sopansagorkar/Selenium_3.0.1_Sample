@@ -15,9 +15,9 @@ public class Drivers {
 		String osarch = System.getProperty("os.arch");
 		if ("Windows 8".equalsIgnoreCase(os) || "Windows 7".equalsIgnoreCase(os) && "amd64".equalsIgnoreCase(osarch)) {
 			if (getDriver.equalsIgnoreCase("firefox")) {
-				DesiredCapabilities capabilities = new DesiredCapabilities();
-				capabilities.setCapability("webdriver.gecko.driver", "src/test/resources/geckodriver.exe");
-				driver = new FirefoxDriver(capabilities);
+				
+				System.setProperty("webdriver.gecko.driver", "src/test/resources/geckodriver.exe");
+				driver = new FirefoxDriver();
 			}
 			if (getDriver.equalsIgnoreCase("phantomjs")) {
 				DesiredCapabilities capabilities = new DesiredCapabilities();
