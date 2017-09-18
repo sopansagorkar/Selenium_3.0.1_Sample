@@ -2,8 +2,8 @@ package com.cybage.test;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import com.test.main.Drivers;
@@ -11,7 +11,7 @@ import com.test.main.Drivers;
 public class TestClass {
 	WebDriver driver;
 
-	@BeforeTest
+	@BeforeMethod
 	public void setUp() {
 		driver = Drivers.chooseDriver();
 	}
@@ -24,7 +24,7 @@ public class TestClass {
 		driver.findElement(By.name("login")).click();
 	}
 
-	@AfterTest
+	@AfterMethod
 	public void tearDown() {
 		driver.quit();
 	}
