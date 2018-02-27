@@ -21,7 +21,6 @@ public class TestClass {
 		driver.get("http://newtours.demoaut.com");
 		driver.findElement(By.name("userName")).sendKeys("sopan");
 		driver.findElement(By.name("password")).sendKeys("sopan");
-		driver.findElement(By.name("login")).click();
 	}
 
 	@AfterMethod

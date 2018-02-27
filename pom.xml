@@ -8,18 +8,29 @@
 	<url>http://maven.apache.org</url>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<sonar.projectKey>2054_Data_Provider:master</sonar.projectKey>
+		<sonar.projectName>2054_Data_Provider</sonar.projectName>
+		<sonar.projectVersion>1.2</sonar.projectVersion>
+		<sonar.login>sopansa</sonar.login>
+		<sonar.password>rider@007</sonar.password>
+		<sonar.java.binaries>target/classes</sonar.java.binaries>
+		<sonar.pdf.skip>false</sonar.pdf.skip>
+		<sonar.pdf.issueDetails>bug,vulnerability,code_smell</sonar.pdf.issueDetails>
+		<sonar.pdf.username>sopansa</sonar.pdf.username>
+		<sonar.pdf.password>rider@007</sonar.pdf.password>
 	</properties>
 	<dependencies>
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>selenium-server</artifactId>
-			<version>3.0.1</version>
+			<version>3.3.1</version>
 		</dependency>
 		<dependency>
 			<groupId>org.testng</groupId>
 			<artifactId>testng</artifactId>
 			<version>6.10</version>
 		</dependency>
+
 	</dependencies>
 	<build>
 		<plugins>
@@ -32,6 +43,11 @@
 						<suiteXmlFile>testng.xml</suiteXmlFile>
 					</suiteXmlFiles>
 				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.sonarsource.scanner.maven</groupId>
+				<artifactId>sonar-maven-plugin</artifactId>
+				<version>3.4.0.905</version>
 			</plugin>
 		</plugins>
 	</build>

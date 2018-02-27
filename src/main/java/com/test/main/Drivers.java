@@ -1,9 +1,13 @@
 package com.test.main;
+
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeDriverService;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.GeckoDriverService;
 import org.openqa.selenium.phantomjs.PhantomJSDriver;
-import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.phantomjs.PhantomJSDriverService;
+import org.openqa.selenium.remote.DesiredCapabilities;
 
 public class Drivers {
 	static WebDriver driver;
@@ -16,6 +20,7 @@ public class Drivers {
 			if (getDriver.equalsIgnoreCase("firefox")) {
 
 				System.setProperty("webdriver.gecko.driver", "src/test/resources/geckodriver.exe");
+				System.setProperty(GeckoDriverService.GECKO_DRIVER_EXE_PROPERTY, "");
 				driver = new FirefoxDriver();
 			}
 			if (getDriver.equalsIgnoreCase("phantomjs")) {
@@ -23,6 +28,12 @@ public class Drivers {
 				capabilities.setCapability(PhantomJSDriverService.PHANTOMJS_EXECUTABLE_PATH_PROPERTY,
 						"src/test/resources/phantomjs.exe");
 				driver = new PhantomJSDriver(capabilities);
+			}
+			if (getDriver.equalsIgnoreCase("chrome")) {
+				DesiredCapabilities capabilities = new DesiredCapabilities();
+				capabilities.setCapability(ChromeDriverService.CHROME_DRIVER_EXE_PROPERTY,
+						"src/test/resources/chromedriver_32.exe");
+				driver = new ChromeDriver(capabilities);
 			}
 
 		} else if ("Linux".equalsIgnoreCase(os) && "amd64".equalsIgnoreCase(osarch)) {
