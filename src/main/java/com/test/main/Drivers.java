@@ -30,10 +30,9 @@ public class Drivers {
 				driver = new PhantomJSDriver(capabilities);
 			}
 			if (getDriver.equalsIgnoreCase("chrome")) {
-				DesiredCapabilities capabilities = new DesiredCapabilities();
-				capabilities.setCapability(ChromeDriverService.CHROME_DRIVER_EXE_PROPERTY,
+				System.setProperty(ChromeDriverService.CHROME_DRIVER_EXE_PROPERTY,
 						"src/test/resources/chromedriver_32.exe");
-				driver = new ChromeDriver(capabilities);
+				driver = new ChromeDriver();
 			}
 
 		} else if ("Linux".equalsIgnoreCase(os) && "amd64".equalsIgnoreCase(osarch)) {
