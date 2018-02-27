@@ -3,4 +3,4 @@
 Using Gecodriver with selenium 3.0.1
 use follwing command to execute test:
 
-mvn test -Ddriver=firefox or mvn test -Ddriver=phantomjs
+mvn test -Ddriver=firefox or mvn test -Ddriver=phantomjs or mvn test -Ddriver=chrome
