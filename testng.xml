@@ -4,6 +4,7 @@
   <test name="Test">
     <classes>
       <class name="com.cybage.test.TestClass"/>
+       <class name="com.cybage.test.TestClass2"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

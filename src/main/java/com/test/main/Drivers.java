@@ -16,7 +16,7 @@ public class Drivers {
 		String getDriver = System.getProperty("driver");
 		String os = System.getProperty("os.name");
 		String osarch = System.getProperty("os.arch");
-		if ("Windows 8".equalsIgnoreCase(os) || "Windows 7".equalsIgnoreCase(os) && "amd64".equalsIgnoreCase(osarch)) {
+		if ("Windows 8".equalsIgnoreCase(os) || "windows 7".equalsIgnoreCase(os) && "amd64".equalsIgnoreCase(osarch)) {
 			if (getDriver.equalsIgnoreCase("firefox")) {
 
 				System.setProperty("webdriver.gecko.driver", "src/test/resources/geckodriver.exe");
